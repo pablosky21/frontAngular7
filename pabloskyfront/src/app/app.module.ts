@@ -1,20 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule }from '@angular/platform-browser';
+import {NgModule }from '@angular/core';
+import {HttpClientModule }from '@angular/common/http';
 
-import { AppComponent } from './app.component';
-import { TipoCampoComponent } from './componentes/tipo-campo/tipo-campo.component';
-import { ListtipoCampoComponent } from './componentes/listtipo-campo/listtipo-campo.component';
+import {AppComponent }from './app.component';
+import {TipoCampoComponent }from './componentes/tipo-campo/tipo-campo.component';
+import {ListtipoCampoComponent }from './componentes/listtipo-campo/listtipo-campo.component';
+import {ListtipoCampoService}from  './services/listtipo-campo.service';
 
-@NgModule({
-  declarations: [
+@NgModule( {
+declarations:[
     AppComponent,
-    TipoCampoComponent,
-    ListtipoCampoComponent
+TipoCampoComponent,
+ListtipoCampoComponent
   ],
-  imports: [
-    BrowserModule
+imports:[
+    BrowserModule,
+HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+providers:[ListtipoCampoService],
+bootstrap:[AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
