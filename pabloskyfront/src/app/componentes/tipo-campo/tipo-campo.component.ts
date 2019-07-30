@@ -1,4 +1,6 @@
 import {Component, OnInit }from '@angular/core';
+import {ListtipoCampoService }from './../../services/listtipo-campo.service';
+import {Tipocampo }from './../../tipocampo';
 
 @Component( {
 selector:'app-tipo-campo',
@@ -10,7 +12,7 @@ nombre:string;
 apellido:string;
 edad:number;
 
-constructor() {
+constructor(private service:ListtipoCampoService) {
 this.nombre = "pablo";
 this.apellido = "lincoleo";
 this.edad = 33;
@@ -19,4 +21,11 @@ this.edad = 33;
 ngOnInit() {
 }
 
+addProduct() {
+const tipocampo:Tipocampo = new Tipocampo();
+this.service.addProduct(Tipocampo).subscribe((result) =>  {
+}, (err) =>  {
+console.log(err);
+});
+}
 }
