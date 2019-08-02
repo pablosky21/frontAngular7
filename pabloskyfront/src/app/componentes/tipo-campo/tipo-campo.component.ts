@@ -11,6 +11,8 @@ export class TipoCampoComponent implements OnInit {
 nombre:string;
 apellido:string;
 edad:number;
+id:number;
+desc:string;
 
 constructor(private service:ListtipoCampoService) {
 this.nombre = "pablo";
@@ -23,7 +25,10 @@ ngOnInit() {
 
 addProduct() {
 const tipocampo:Tipocampo = new Tipocampo();
-this.service.addProduct(Tipocampo).subscribe((result) =>  {
+tipocampo.id = this.id;
+tipocampo.desc = this.desc;
+console.log(tipocampo);
+this.service.addProduct(tipocampo).subscribe((result) =>  {
 }, (err) =>  {
 console.log(err);
 });

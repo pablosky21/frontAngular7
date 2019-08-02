@@ -30,7 +30,7 @@ headers:new HttpHeaders( {
 'Content-Type':'application/json'
 })
 };
-console.log(product);
+console.log(product + "product1");
 return this.http.post < any > ('http://localhost:8080/insertPablosky', JSON.stringify(product), httpOptions).pipe(
 tap((product) => console.log(`added product w/ id = $ {product.id}`)),
 catchError(this.handleError < any > ('addProduct'))
